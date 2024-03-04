@@ -1,0 +1,11 @@
+pandoc: 3.1.11
+pkgdown: 2.0.7
+pkgdown_sha: ~
+articles:
+  binance-examples: binance-examples.html
+  getting-started: getting-started.html
+last_built: 2024-03-04T04:13Z
+urls:
+  reference: https://vedhav.github.io/binance/reference
+  article: https://vedhav.github.io/binance/articles
+
