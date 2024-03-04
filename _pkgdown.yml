@@ -1,37 +1,39 @@
-url: https://vedhav.github.io/binance
+url: https://vedhav.github.io/binance/
 template:
   bootstrap: 5
   bslib:
     bg: "#fff"
     fg: "#2F3337"
     primary: "#F2BD09"
-
 navbar:
   structure:
-    left: [get-started, reference, articles]
-    right: [search, github]
+    left:
+      - get-started
+      - reference
+      - articles
+    right:
+      - search
+      - github
   components:
     get-started:
       text: Get started
       href: articles/getting-started.html
-
 reference:
-  - title: "Constructors for different exchanges"
-    desc: >
+  - title: Constructors for different exchanges
+    desc: |
       `R6` object constructors for connecting to different Binance exchanges.
     contents:
       - binance_spot
       - binance_futures_usdt_m
       - binance_futures_coin_m
       - binance_options
-  - title: "Binance R6 Classes"
-    desc: "The R6 classes for different Binance exchanges."
+  - title: Binance R6 Classes
+    desc: The R6 classes for different Binance exchanges.
     contents:
       - BinanceSpot
       - BinanceFuturesUSDTM
       - BinanceFuturesCoinM
       - BinanceOptions
-
 articles:
   - title: Using `binance`
     navbar: ~
