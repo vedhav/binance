@@ -1,0 +1,26 @@
+---
+title: "Getting Started with binance"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Getting Started with binance}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+## Introduction
+
+`binance` is an interface for the Binance REST APIs in R using the `httr2` package and `tidyverse` styling.
+
+It supports connecting and sending requests to:
+
+1. Binance Spot Exchange
+2. Binance USDT-M Futures Exchange
+3. Binance Coin-M Futures Exchange
+4. Binance European Options Exchange
+
+
+## Installation
+
+```r
+pak::pak("vedhav/binance")
+```

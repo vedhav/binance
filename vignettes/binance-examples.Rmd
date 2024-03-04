@@ -1,0 +1,140 @@
+---
+title: "Example showcase"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Example showcase}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+## Binance Spot API
+
+The `binance_spot()` is the constructor for the Binance Spot API.
+It returns an `R6` object of class `BinanceSpot` which contains the methods for the Binance Spot API.
+
+For more information please refer to the [Binance Spot API docs](https://binance-docs.github.io/apidocs/spot/en/).
+
+```{r, eval = FALSE}
+spot <- binance_spot()
+
+spot$test_connectivity()
+spot$check_server_time()
+spot$get_exchange_info()
+spot$order_book("BNBUSDT", limit = 20)
+spot$recent_trades_list("BTCUSDT")
+spot$old_trade_lookup("BTCUSDT")
+spot$aggregate_trades_list("BTCUSDT")
+spot$kline("BTCUSDT", "1m", limit = 10)
+spot$get_ui_kline_data("BTCUSDT", "1m", limit = 10)
+spot$get_current_avg_price("BTCUSDT")
+spot$ticker_stats_24hr("BTCUSDT")
+spot$trading_day_ticker(c("BTCUSDT", "ETHUSDT"))
+spot$price_ticker(c("BTCUSDT", "ETHUSDT"))
+spot$order_book_ticker(c("BTCUSDT", "ETHUSDT"))
+spot$price_change_stats(c("BTCUSDT", "ETHUSDT"))
+```
+
+
+## Binance USDT-M Futures API
+
+The `binance_futures_usdt_m()` is the constructor for the Binance USDT-M Futures API.
+It returns an `R6` object of class `BinanceFuturesUSDTM` which contains the methods for the Binance USDT-M Futures API.
+
+For more information please refer to the [Binance USDT-M Futures API docs](https://binance-docs.github.io/apidocs/futures/en/).
+
+```{r, eval = FALSE}
+futures_usdt_m <- binance_futures_usdt_m()
+
+futures_usdt_m$test_connectivity()
+futures_usdt_m$check_server_time()
+futures_usdt_m$get_exchange_info()
+futures_usdt_m$order_book("BNBUSDT", limit = 5)
+futures_usdt_m$recent_trades_list("BTCUSDT")
+futures_usdt_m$old_trade_lookup("BTCUSDT") # error, need auth
+futures_usdt_m$kline("BTCUSDT", "1m", limit = 10)
+futures_usdt_m$ticker_stats_24hr("BTCUSDT")
+futures_usdt_m$price_ticker(c("BTCUSDT", "ETHUSDT"))
+futures_usdt_m$aggregate_trades("BTCUSDT")
+futures_usdt_m$continuous_kline("BTCUSDT", "PERPETUAL", "1d")
+futures_usdt_m$index_price_klines("BTCUSDT", "1d")
+futures_usdt_m$mark_price_klines("BTCUSDT", "1d")
+futures_usdt_m$premium_index_klines("BTCUSDT", "1d")
+futures_usdt_m$mark_price("BTCUSDT")
+futures_usdt_m$funding_rate_history("BTCUSDT")
+futures_usdt_m$funding_info()
+futures_usdt_m$price_ticker_v2("BTCUSDT")
+futures_usdt_m$order_book_ticker("BTCUSDT")
+futures_usdt_m$open_interest("BTCUSDT")
+futures_usdt_m$quarterly_settlement_price("BTCUSDT")
+futures_usdt_m$open_interest_stats("BTCUSDT", "5m")
+futures_usdt_m$top_ls_ratio_accounts("BTCUSDT", "5m")
+futures_usdt_m$top_ls_ratio_positions("BTCUSDT", "5m")
+futures_usdt_m$ls_ratio("BTCUSDT", "5m")
+futures_usdt_m$taker_buy_sell_volume("BTCUSDT", "5m")
+futures_usdt_m$basis("BTCUSDT", "PERPETUAL", "5m")
+futures_usdt_m$bltv_kline("BTCUP", "5m")
+futures_usdt_m$composite_index_info("NFTUSDT")
+futures_usdt_m$multi_asset_index("BTCUSDT")
+futures_usdt_m$index_constituents("BTCUSDT")
+```
+
+## Binance COIN-M Futures API
+
+The `binance_futures_coin_m()` is the constructor for the Binance Coin-M Futures API.
+It returns an `R6` object of class `BinanceFuturesCoinM` which contains the methods for the Binance Coin-M Futures API.
+
+For more information please refer to the [Binance Coin-M Futures API docs](https://binance-docs.github.io/apidocs/delivery/en/).
+
+```{r, eval = FALSE}
+futures_coin_m <- binance_futures_coin_m()
+
+futures_coin_m$test_connectivity()
+futures_coin_m$check_server_time()
+futures_coin_m$get_exchange_info()
+futures_coin_m$order_book("BNBUSD_PERP", limit = 5)
+futures_coin_m$recent_trades_list("BTCUSD_PERP")
+futures_coin_m$old_trade_lookup("BTCUSD_PERP") # error, need auth
+futures_coin_m$kline("BTCUSD_PERP", "1m", limit = 10)
+futures_coin_m$ticker_stats_24hr("BTCUSD_PERP")
+futures_coin_m$price_ticker(c("BTCUSDT", "ETHUSDT"))
+futures_coin_m$aggregate_trades("BTCUSD_PERP")
+futures_coin_m$index_and_mark_price("BTCUSD_PERP")
+futures_coin_m$funding_rate("BTCUSD_PERP")
+futures_coin_m$continuous_kline("BTCUSD", "PERPETUAL", "1d")
+futures_coin_m$index_price_klines("BTCUSD", "1d")
+futures_coin_m$mark_price_klines("BTCUSD_PERP", "1d")
+futures_coin_m$premium_index_klines("BTCUSD_PERP", "1d")
+futures_coin_m$order_book_ticker("BTCUSD_PERP")
+futures_coin_m$index_constituents("BTCUSD")
+futures_coin_m$open_interest("BTCUSD_PERP")
+futures_coin_m$quarterly_settlement_price("BTCUSD")
+futures_coin_m$open_interest_stats("BTCUSD", "PERPETUAL", "5m")
+futures_coin_m$top_ls_ratio_accounts("BTCUSD", "5m")
+futures_coin_m$top_ls_ratio_positions("BTCUSD", "1d")
+futures_coin_m$ls_ratio("BTCUSD", "5m")
+futures_coin_m$taker_buy_sell_volume("BTCUSD", "PERPETUAL", "5m")
+futures_coin_m$basis("BTCUSD", "PERPETUAL", "5m")
+```
+
+## Binance European Options API
+
+The `binance_options()` is the constructor for the Binance European Options API.
+It returns an `R6` object of class `BinanceOptions` which contains the methods for the Binance European Options API.
+
+For more information please refer to the [Binance European Options API docs](https://binance-docs.github.io/apidocs/voptions/en/).
+```{r, eval = FALSE}
+options <- binance_options()
+
+options$test_connectivity()
+options$check_server_time()
+options$get_exchange_info()
+options$order_book("BTC-241227-100000-C", limit = 10)
+options$recent_trades_list("BTC-241227-100000-C")
+options$old_trade_lookup("BTC-241227-100000-C")
+options$kline("BTC-241227-100000-C", "1d", limit = 10)
+options$ticker_stats_24hr("BTC-241227-100000-C")
+options$price_ticker("BTCUSDT")
+options$mark_price("BTC-241227-100000-C")
+options$excerise_records()
+options$open_interest("BTC", "241227")
+```
